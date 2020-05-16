@@ -1,0 +1,114 @@
+{
+    "name": "kardamon-agony",
+    "version": "0.0.1",
+    "description": "the greek playing cards game agony",
+    "type": "commonjs",
+    "engines": {
+        "node": ">=8.10.0"
+    },
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon src/index.js",
+        "release": "standard-version",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/georgekouklakis/kardamon-agony.git"
+    },
+    "author": "georgekouklakis",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/georgekouklakis/kardamon/issues"
+    },
+    "homepage": "https://github.com/georgekouklakis/kardamon",
+    "devDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "eslint": "^6.8.0",
+        "eslint-plugin-jest": "^23.11.0",
+        "eslint-plugin-node": "^11.1.0",
+        "husky": "^4.2.5",
+        "jest": "^26.0.1",
+        "minimist": ">=1.2.2",
+        "nodemon": "^2.0.4",
+        "prettier-eslint": "^9.0.1",
+        "standard-version": "^8.0.0"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "socket.io": "^2.3.0"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E  HUSKY_GIT_PARAMS"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ],
+        "rules": {
+            "subject-case": [
+                2,
+                "never",
+                [
+                    "start-case",
+                    "pascal-case"
+                ]
+            ]
+        }
+    },
+    "eslintConfig": {
+        "env": {
+            "jest/globals": true
+        },
+        "extends": [
+            "eslint:recommended",
+            "plugin:node/recommended"
+        ],
+        "globals": {
+            "Atomics": "readonly",
+            "SharedArrayBuffer": "readonly"
+        },
+        "parserOptions": {
+            "ecmaVersion": 2020
+        },
+        "plugins": ["jest"],
+        "rules": {
+            "indent": [
+                "error",
+                4
+            ],
+            "linebreak-style": [
+                "error",
+                "windows"
+            ],
+            "quotes": [
+                "error",
+                "single"
+            ],
+            "semi": [
+                "error",
+                "always"
+            ],
+            "eol-last": [
+                "error",
+                "always"
+            ],
+            "comma-dangle": [
+                "error",
+                "always-multiline"
+            ],
+            "space-before-function-paren": [
+                "error",
+                "always"
+            ]
+        }
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "singleQuote": true,
+        "trailingComma": "all"
+    }
+}
